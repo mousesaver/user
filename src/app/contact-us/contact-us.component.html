@@ -1,0 +1,26 @@
+<app-navbar></app-navbar>
+<main>
+  <h1>Contact us</h1>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!submitted">
+    <label for="name">Name:</label>
+    <input type="text" id="name" formControlName="name">
+    <p *ngIf="!name?.valid && (name?.dirty || name?.touched)">Name is required</p>
+    <label for="message">Message:</label>
+    <input type="text" id="message" formControlName="message">
+    <div *ngIf="!message?.valid && (message?.dirty || message?.touched)">
+      <p *ngIf="message?.errors?.['required']">Message is required</p>
+      <p *ngIf="!message?.valid && !message?.errors?.['required']">Message needs to be longer than 10 characters</p>
+    </div>
+    <button type="submit">Send Message</button>
+  </form>
+  <div *ngIf="submitted">
+    <p>Thank you for contacting us. We will be in touch shortly!</p>
+    <hr>
+    <h5>You have submitted the following message:</h5>
+    <h6>Name:</h6>
+    <p>{{ name?.value }}</p>
+    <h6>Message:</h6>
+    <p>{{ message?.value }}</p>
+  </div>
+</main>
+

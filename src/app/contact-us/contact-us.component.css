@@ -1,0 +1,25 @@
+main {
+  color: black;
+  font-size: 20px;
+  margin: 5px 200px;
+}
+label {
+  display: block;
+}
+input {
+  display: block;
+  width: 600px;
+  height: 50px;
+  padding: 5px 10px;
+  margin-bottom: 30px;
+}
+
+button {
+  background-color: rgb(198, 41, 41);
+  width: 250px;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+  border-radius: 5px;
+  border: none;
+}
